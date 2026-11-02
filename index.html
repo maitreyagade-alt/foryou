@@ -473,4 +473,51 @@ h1 .hb { display: block; font-size: .46em; color: var(--ink-soft); margin-bottom
     wn.textContent = String(i + 1);
     wt.textContent = WISHES[i];
     wl.textContent = 'Wish ' + (i + 1) + ' of 20';
-    count.textContent = seenCount + ' of 
+    count.textContent = seenCount + ' of 20 opened';
+    card.classList.remove('swap');
+    void card.offsetWidth;
+    card.classList.add('swap');
+  }
+
+  document.getElementById('surprise').addEventListener('click', function () {
+    var pool = [], i;
+    for (i = 0; i < WISHES.length; i++) { if (!seen[i] && i !== current) pool.push(i); }
+    if (!pool.length) { for (i = 0; i < WISHES.length; i++) { if (i !== current) pool.push(i); } }
+    show(pool[Math.floor(Math.random() * pool.length)]);
+  });
+  show(0);
+
+  // Lightbox
+  var lb = document.getElementById('lb');
+  var lbimg = document.getElementById('lbimg');
+  var lbcap = document.getElementById('lbcap');
+  var lastFrame = null;
+
+  function openLb(frame) {
+    var img = frame.querySelector('img');
+    lastFrame = frame;
+    // The data-src attribute is now just the filename, so this works automatically
+    lbimg.src = frame.getAttribute('data-src');
+    lbimg.alt = img ? img.alt : '';
+    lbcap.textContent = frame.getAttribute('data-cap') || '';
+    lb.hidden = false;
+    document.getElementById('lbclose').focus();
+  }
+  function closeLb() {
+    lb.hidden = true;
+    lbimg.removeAttribute('src');
+    if (lastFrame) lastFrame.focus();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.frame'), function (f) {
+    f.addEventListener('click', function () { openLb(f); });
+  });
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb || e.target.id === 'lbclose') closeLb();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lb.hidden) closeLb();
+  });
+})();
+</script>
+
+</body></html>
