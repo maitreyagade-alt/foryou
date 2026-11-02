@@ -1,0 +1,519 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Durva Turns Twenty</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=Kalam:wght@300;400&family=Rozha+One&display=swap">
+<style>
+/* Layout concept: a pond at dusk. One lotus blooms at the top, photos drift down the page like lily pads, and twenty petals each hold a wish. Leaf-cut corners and arches repeat the petal shape. */
+:root {
+  --bg: #FFF4F6;
+  --surface: #FFFFFF;
+  --ink: #3B1E2E;
+  --ink-soft: #74505F;
+  --lotus: #D23F7C;
+  --petal: #F8CADA;
+  --leaf: #2D6A56;
+  --gold: #B9801F;
+  --line: rgba(59, 30, 46, 0.14);
+  --glow: rgba(248, 202, 218, 0.75);
+  --shadow: rgba(59, 30, 46, 0.35);
+  --on-lotus: #FFFFFF;
+  --on-petal: #3B1E2E;
+  --veil: rgba(18, 10, 15, 0.9);
+  --veil-ink: #FFF4F6;
+  --font-display: 'Rozha One', 'Noto Serif Devanagari', Georgia, serif;
+  --font-body: 'Hind', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-hand: 'Kalam', 'Segoe Print', 'Bradley Hand', cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F211D;
+    --surface: #16302A;
+    --ink: #FCEFF3;
+    --ink-soft: #C8AEB9;
+    --lotus: #F27BA8;
+    --petal: #F7C0D3;
+    --leaf: #7FC8A9;
+    --gold: #E6B450;
+    --line: rgba(252, 239, 243, 0.16);
+    --glow: rgba(242, 123, 168, 0.2);
+    --shadow: rgba(0, 0, 0, 0.55);
+    --on-lotus: #2A0F1C;
+    --on-petal: #3B1E2E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F211D;
+  --surface: #16302A;
+  --ink: #FCEFF3;
+  --ink-soft: #C8AEB9;
+  --lotus: #F27BA8;
+  --petal: #F7C0D3;
+  --leaf: #7FC8A9;
+  --gold: #E6B450;
+  --line: rgba(252, 239, 243, 0.16);
+  --glow: rgba(242, 123, 168, 0.2);
+  --shadow: rgba(0, 0, 0, 0.55);
+  --on-lotus: #2A0F1C;
+  --on-petal: #3B1E2E;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+img { height: auto; }
+:focus-visible { outline: 3px solid var(--lotus); outline-offset: 3px; }
+
+.wrap {
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.band { background: var(--surface); }
+section { padding-block: clamp(2.75rem, 7vw, 5rem); }
+
+h1, h2 { font-family: var(--font-display); font-weight: 400; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.8rem, 4.6vw, 3rem); line-height: 1.12; }
+p { margin: 0; }
+.eyebrow {
+  display: flex; align-items: center; gap: .55rem;
+  font-size: .8rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--leaf);
+}
+.ico { width: 1.7rem; height: 1.3rem; fill: var(--lotus); flex: none; }
+.lede { max-width: 34rem; color: var(--ink-soft); font-size: 1.15rem; }
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: 2rem 3rem;
+  align-items: center;
+  padding-block: clamp(1.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+}
+.hero-text { display: grid; gap: 1.1rem; justify-items: start; }
+h1 { font-size: clamp(2.7rem, 8.6vw, 5.8rem); line-height: 1.02; }
+h1 .hb { display: block; font-size: .46em; color: var(--ink-soft); margin-bottom: .2em; }
+.dev { font-family: var(--font-display); color: var(--lotus); font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.15; }
+.bloom-wrap { display: grid; gap: .4rem; justify-items: center; }
+.bloom {
+  display: block; width: 100%; padding: 0; border: 0; cursor: pointer;
+  background: radial-gradient(closest-side, var(--glow), transparent 74%);
+  color: inherit; border-radius: 50%;
+}
+.bloom svg { display: block; width: 100%; height: auto; }
+.hint { font-family: var(--font-hand); font-size: 1.1rem; color: var(--ink-soft); }
+
+/* Lotus drawing */
+.petal-shape { stroke: var(--bg); stroke-width: 1.2; stroke-opacity: .55; fill: url(#gl); }
+.back { fill-opacity: .55; }
+.mid { fill-opacity: .82; }
+.front { fill-opacity: 1; }
+.pad { fill: var(--leaf); opacity: .9; }
+.rip { fill: none; stroke: var(--leaf); stroke-width: 1.2; opacity: .35; }
+.spark circle { fill: var(--gold); opacity: .85; }
+.p { transform-origin: 200px 238px; transform: rotate(var(--a)) scale(var(--s, 1)); }
+.go .p { animation: open 1.9s cubic-bezier(.22, .9, .3, 1) var(--d, 0s) both; }
+@keyframes open {
+  from { transform: rotate(calc(var(--a) * .2)) scale(calc(var(--s, 1) * .4)); opacity: 0; }
+}
+
+/* Then and now */
+.tn { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2.5rem 4rem; align-items: center; }
+.tn-text { display: grid; gap: 1rem; }
+.tn-text p { max-width: 28rem; color: var(--ink-soft); font-size: 1.1rem; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem clamp(1rem, 3vw, 2rem); align-items: start; max-width: 34rem; }
+.arch { margin: 0; }
+.arch img {
+  display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 22%;
+  border-radius: 50% 50% 1.25rem 1.25rem / 37.5% 37.5% 1.25rem 1.25rem;
+  box-shadow: 0 14px 30px -14px var(--shadow);
+}
+.arch.late { margin-top: 2.5rem; }
+.arch figcaption, .shot figcaption { font-family: var(--font-hand); font-size: 1.2rem; line-height: 1.35; color: var(--ink-soft); margin-top: .6rem; }
+.arch figcaption { text-align: center; }
+
+/* Gallery */
+.gal-head { display: grid; gap: .6rem; margin-bottom: 2rem; }
+.gal-head p { color: var(--ink-soft); }
+.gallery { column-width: 16rem; column-gap: 1.5rem; }
+.shot { break-inside: avoid; margin: 0; padding-bottom: 1.6rem; }
+.frame {
+  display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; line-height: 0;
+  border-radius: 0 2.25rem 0 2.25rem; overflow: hidden;
+  box-shadow: 0 14px 30px -14px var(--shadow);
+  transition: transform .2s ease;
+}
+.frame:hover { transform: translateY(-3px); }
+.frame img { width: 100%; display: block; }
+
+/* Wishes */
+.wishes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3.5rem; align-items: start; }
+.wish-head { grid-column: 1 / -1; display: grid; gap: .6rem; }
+.wish-head p { color: var(--ink-soft); max-width: 32rem; }
+.wish-card {
+  order: 2;
+  background: var(--bg); border: 1.5px solid var(--line);
+  border-radius: 0 2.25rem 0 2.25rem;
+  padding: 1.5rem 1.6rem 1.3rem; min-height: 13rem;
+  display: flex; flex-direction: column; gap: .5rem;
+}
+.wn { font-family: var(--font-display); color: var(--lotus); font-size: 3.6rem; line-height: 1; }
+.wt { font-size: 1.3rem; line-height: 1.45; text-wrap: pretty; }
+.wl { margin-top: auto; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+.wish-card.swap { animation: pop .4s ease; }
+@keyframes pop { from { opacity: 0; transform: translateY(6px); } }
+.pick { display: grid; gap: 1.1rem; }
+.petals { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .6rem; max-width: 26rem; padding: 0; margin: 0; list-style: none; }
+.petal {
+  width: 100%; aspect-ratio: 1; min-height: 44px; cursor: pointer;
+  border: 1.5px solid var(--lotus); background: var(--bg); color: var(--lotus);
+  border-radius: 0 50% 0 50%;
+  font-family: var(--font-display); font-size: 1.15rem; line-height: 1;
+  transition: transform .15s ease, background .15s ease;
+}
+.petal:hover { transform: translateY(-2px) rotate(-4deg); }
+.petal.seen { background: var(--petal); border-color: var(--petal); color: var(--on-petal); }
+.petal[aria-pressed="true"] { background: var(--lotus); border-color: var(--lotus); color: var(--on-lotus); }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; }
+.btn {
+  font: inherit; font-weight: 600; cursor: pointer; border: 0; border-radius: 999px;
+  background: var(--lotus); color: var(--on-lotus); padding: .7rem 1.4rem; min-height: 44px;
+}
+.count { color: var(--ink-soft); font-size: .95rem; }
+
+/* Close */
+.close { text-align: left; }
+.close .wrap { display: grid; gap: 1rem; justify-items: start; }
+.close .mini { width: 4rem; height: 3rem; fill: var(--lotus); }
+.big-line { font-family: var(--font-display); font-size: clamp(2.2rem, 6.5vw, 4rem); line-height: 1.05; color: var(--lotus); }
+.close p.note { max-width: 34rem; font-size: 1.15rem; color: var(--ink-soft); }
+.sign { font-family: var(--font-hand); font-size: 1.5rem; color: var(--ink); }
+
+/* Lightbox */
+.lb {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; align-content: center; gap: .8rem;
+  background: var(--veil); color: var(--veil-ink);
+  padding: calc(56px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  cursor: zoom-out;
+}
+.lb[hidden] { display: none; }
+.lb img { max-width: 100%; max-height: 76vh; object-fit: contain; border-radius: 0 1.5rem 0 1.5rem; cursor: default; }
+.lb p { font-family: var(--font-hand); font-size: 1.25rem; text-align: center; }
+.lb-close {
+  position: absolute; top: calc(10px + env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px));
+  width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--veil-ink); background: transparent; color: var(--veil-ink);
+  font-size: 1.4rem; line-height: 1; cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .bloom-wrap { order: -1; max-width: 22rem; margin-inline: auto; width: 100%; }
+  .tn { grid-template-columns: minmax(0, 1fr); }
+  .wishes { grid-template-columns: minmax(0, 1fr); }
+  .wish-card { order: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .go .p, .wish-card.swap { animation: none; }
+  .frame, .petal { transition: none; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="mini" viewBox="0 0 40 30">
+      <path d="M20,28 C12,22 12,10 20,2 C28,10 28,22 20,28Z" transform="rotate(-52 20 28)" opacity=".5"/>
+      <path d="M20,28 C12,22 12,10 20,2 C28,10 28,22 20,28Z" transform="rotate(52 20 28)" opacity=".5"/>
+      <path d="M20,28 C12,22 12,10 20,2 C28,10 28,22 20,28Z" transform="rotate(-26 20 28)" opacity=".75"/>
+      <path d="M20,28 C12,22 12,10 20,2 C28,10 28,22 20,28Z" transform="rotate(26 20 28)" opacity=".75"/>
+      <path d="M20,28 C12,22 12,10 20,2 C28,10 28,22 20,28Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="wrap hero">
+  <div class="hero-text">
+    <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#mini"/></svg>Twenty years, and counting</p>
+    <h1><span class="hb">Happy birthday,</span>Durva</h1>
+    <p class="dev" lang="mr">दुर्वा</p>
+    <p class="lede">A small corner of the internet, grown just for you. A few photos, twenty wishes, and a lotus that blooms whenever you tap it.</p>
+  </div>
+
+  <div class="bloom-wrap">
+    <button class="bloom" id="bloom" type="button" aria-label="Make the lotus bloom again">
+      <svg id="lotus" class="go" viewBox="0 0 400 292" role="img" aria-label="A pink lotus blooming on a green lily pad">
+        <defs>
+          <linearGradient id="gl" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" style="stop-color: var(--lotus)"/>
+            <stop offset="1" style="stop-color: var(--petal)"/>
+          </linearGradient>
+        </defs>
+        <ellipse class="rip" cx="200" cy="256" rx="192" ry="30"/>
+        <ellipse class="rip" cx="200" cy="256" rx="150" ry="24"/>
+        <ellipse class="pad" cx="200" cy="252" rx="176" ry="26"/>
+        <ellipse class="pad" cx="46" cy="268" rx="32" ry="8"/>
+        <ellipse class="pad" cx="358" cy="270" rx="28" ry="7"/>
+        <g class="spark">
+          <circle cx="54" cy="92" r="3.5"/><circle cx="350" cy="80" r="3"/><circle cx="118" cy="26" r="2.5"/>
+          <circle cx="288" cy="20" r="3.5"/><circle cx="374" cy="150" r="2.5"/><circle cx="26" cy="158" r="3"/>
+        </g>
+        <g>
+          <path class="p petal-shape back" style="--a:-78deg;--s:1;--d:.00s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape back" style="--a:78deg;--s:1;--d:.00s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape back" style="--a:-52deg;--s:1;--d:.08s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape back" style="--a:52deg;--s:1;--d:.08s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape back" style="--a:-26deg;--s:1;--d:.16s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape back" style="--a:26deg;--s:1;--d:.16s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape back" style="--a:0deg;--s:1;--d:.24s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+
+          <path class="p petal-shape mid" style="--a:-64deg;--s:.9;--d:.34s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape mid" style="--a:64deg;--s:.9;--d:.34s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape mid" style="--a:-32deg;--s:.9;--d:.44s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape mid" style="--a:32deg;--s:.9;--d:.44s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape mid" style="--a:0deg;--s:.9;--d:.52s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+
+          <path class="p petal-shape front" style="--a:-40deg;--s:.78;--d:.64s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape front" style="--a:40deg;--s:.78;--d:.64s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape front" style="--a:-13deg;--s:.78;--d:.74s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+          <path class="p petal-shape front" style="--a:13deg;--s:.78;--d:.74s" d="M200,238 C160,206 156,120 200,40 C244,120 240,206 200,238Z"/>
+        </g>
+      </svg>
+    </button>
+    <p class="hint">Tap the lotus to bloom it again</p>
+  </div>
+</header>
+
+<section class="band" aria-labelledby="tn-title">
+  <div class="wrap tn">
+    <div class="tn-text">
+      <p class="eyebrow">Then and now</p>
+      <h2 id="tn-title">Tiny crown, then. A whole kingdom, now.</h2>
+      <p>Twenty years apart in these two, and both look ready for a party.</p>
+    </div>
+    <div class="pair">
+      <figure class="arch">
+        <img src="img/baby.jpg" width="661" height="1200" alt="An old photo of a baby in a pale pink party dress and a sparkly silver crown, looking over her shoulder next to a mirror">
+        <figcaption>Once upon a time</figcaption>
+      </figure>
+      <figure class="arch late">
+        <img src="img/saree-blue.jpg" width="730" height="1200" alt="Smiling in a blue and red silk saree with gold jewellery and henna, on a terrace with green plants behind">
+        <figcaption>and here we are</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="gal-title">
+  <div class="wrap">
+    <div class="gal-head">
+      <p class="eyebrow">Photo album</p>
+      <h2 id="gal-title">A few good frames</h2>
+      <p>Tap any photo to see it bigger.</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot">
+        <button class="frame" type="button" data-src="img/kurta.jpg" data-cap="A phone case with a face of its own.">
+          <img src="img/kurta.jpg" width="677" height="1200" alt="Mirror selfie in a black kurta with white paisley print, holding a phone with a smiley case">
+        </button>
+        <figcaption>A phone case with a face of its own.</figcaption>
+      </figure>
+      <figure class="shot">
+        <button class="frame" type="button" data-src="img/event.jpg" data-cap="Caught mid-smile, chairs and all.">
+          <img src="img/event.jpg" width="1200" height="676" alt="Close selfie in a green embroidered top, smiling, with rows of cream plastic chairs behind">
+        </button>
+        <figcaption>Caught mid-smile, chairs and all.</figcaption>
+      </figure>
+      <figure class="shot">
+        <button class="frame" type="button" data-src="img/saree-maroon.jpg" data-cap="Pearls, a nath, and that smile.">
+          <img src="img/saree-maroon.jpg" width="675" height="1200" alt="Portrait in a maroon saree with a teal and gold border, pearl jewellery and a nath">
+        </button>
+        <figcaption>Pearls, a nath, and that smile.</figcaption>
+      </figure>
+      <figure class="shot">
+        <button class="frame" type="button" data-src="img/ride.jpg" data-cap="Out for a ride, tongue out.">
+          <img src="img/ride.jpg" width="1200" height="675" alt="Selfie on a ride: a young man in a helmet in the front, and behind him someone sticking out their tongue">
+        </button>
+        <figcaption>Out for a ride, tongue out.</figcaption>
+      </figure>
+      <figure class="shot">
+        <button class="frame" type="button" data-src="img/mirror-blue.jpg" data-cap="Gold mirror, blue dress, good light.">
+          <img src="img/mirror-blue.jpg" width="900" height="1200" alt="Mirror selfie in a navy dress, framed by a carved gold and red mirror, with a staircase and statues behind">
+        </button>
+        <figcaption>Gold mirror, blue dress, good light.</figcaption>
+      </figure>
+      <figure class="shot">
+        <button class="frame" type="button" data-src="img/camera.jpg" data-cap="Camera up, mirror ready.">
+          <img src="img/camera.jpg" width="479" height="618" alt="Mirror photo in a yellow kurta, holding a silver film camera in front of the face, with green bangles">
+        </button>
+        <figcaption>Camera up, mirror ready.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="wish-title">
+  <div class="wrap wishes">
+    <div class="wish-head">
+      <p class="eyebrow">For the year ahead</p>
+      <h2 id="wish-title">Twenty petals, twenty wishes</h2>
+      <p>One petal for every year. Tap one to open it, or let a petal surprise you.</p>
+    </div>
+
+    <div class="wish-card" id="card" aria-live="polite">
+      <div class="wn" id="wn">1</div>
+      <p class="wt" id="wt"></p>
+      <p class="wl" id="wl">Wish 1 of 20</p>
+    </div>
+
+    <div class="pick">
+      <ul class="petals" id="petals"></ul>
+      <div class="controls">
+        <button class="btn" id="surprise" type="button">Surprise me</button>
+        <p class="count" id="count"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="close">
+  <div class="wrap">
+    <svg class="mini" aria-hidden="true"><use href="#mini"/></svg>
+    <p class="big-line">Here's to twenty.</p>
+    <p class="note">May the year ahead be full of good light, good people, and the kind of small moments that make an ordinary day feel soft. Happy birthday, Durva.</p>
+    <p class="sign">With love, from all of us</p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbclose" type="button" aria-label="Close photo">&times;</button>
+  <img id="lbimg" alt="">
+  <p id="lbcap"></p>
+</div>
+
+<script>
+(function () {
+  var WISHES = [
+    "May your year be full of long, unhurried laughs.",
+    "May every photo you take look exactly the way it felt.",
+    "May good light always find your mirror.",
+    "May the people around you keep showing up, preferably with snacks.",
+    "May your hardest weeks end with something warm to eat.",
+    "May you always wear the thing you love, and wear it loudly.",
+    "May new places feel like old friends by the end of the day.",
+    "May your phone battery outlast your plans.",
+    "May the answers you're looking for arrive before the deadlines do.",
+    "May you be as kind to yourself as you are to everyone else.",
+    "May your sleep be long and your mornings gentle.",
+    "May every rain be the cozy kind, the kind you watch from indoors.",
+    "May curiosity keep leading you somewhere good.",
+    "May your playlists always shuffle in your favour.",
+    "May you keep collecting small, good moments.",
+    "Like a lotus, may you rise through anything and come out blooming.",
+    "May your Mondays be short and your weekends feel long.",
+    "May someone always save you the last bite.",
+    "May you be as proud of yourself as the people who love you already are.",
+    "Happy birthday, Durva. Here's to twenty, and to everything that comes next."
+  ];
+
+  // Lotus: replay the bloom
+  var bloom = document.getElementById('bloom');
+  var lotus = document.getElementById('lotus');
+  bloom.addEventListener('click', function () {
+    lotus.classList.remove('go');
+    void lotus.getBoundingClientRect();
+    lotus.classList.add('go');
+  });
+
+  // Wishes
+  var grid = document.getElementById('petals');
+  var card = document.getElementById('card');
+  var wn = document.getElementById('wn');
+  var wt = document.getElementById('wt');
+  var wl = document.getElementById('wl');
+  var count = document.getElementById('count');
+  var seen = {};
+  var seenCount = 0;
+  var current = -1;
+  var buttons = [];
+
+  WISHES.forEach(function (w, i) {
+    var li = document.createElement('li');
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'petal';
+    b.textContent = String(i + 1);
+    b.setAttribute('aria-label', 'Open wish ' + (i + 1));
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function () { show(i); });
+    li.appendChild(b);
+    grid.appendChild(li);
+    buttons.push(b);
+  });
+
+  function show(i) {
+    current = i;
+    if (!seen[i]) { seen[i] = true; seenCount++; }
+    buttons.forEach(function (b, j) {
+      b.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+      b.classList.toggle('seen', !!seen[j]);
+    });
+    wn.textContent = String(i + 1);
+    wt.textContent = WISHES[i];
+    wl.textContent = 'Wish ' + (i + 1) + ' of 20';
+    count.textContent = seenCount + ' of 20 opened';
+    card.classList.remove('swap');
+    void card.offsetWidth;
+    card.classList.add('swap');
+  }
+
+  document.getElementById('surprise').addEventListener('click', function () {
+    var pool = [], i;
+    for (i = 0; i < WISHES.length; i++) { if (!seen[i] && i !== current) pool.push(i); }
+    if (!pool.length) { for (i = 0; i < WISHES.length; i++) { if (i !== current) pool.push(i); } }
+    show(pool[Math.floor(Math.random() * pool.length)]);
+  });
+  show(0);
+
+  // Lightbox
+  var lb = document.getElementById('lb');
+  var lbimg = document.getElementById('lbimg');
+  var lbcap = document.getElementById('lbcap');
+  var lastFrame = null;
+
+  function openLb(frame) {
+    var img = frame.querySelector('img');
+    lastFrame = frame;
+    lbimg.src = frame.getAttribute('data-src');
+    lbimg.alt = img ? img.alt : '';
+    lbcap.textContent = frame.getAttribute('data-cap') || '';
+    lb.hidden = false;
+    document.getElementById('lbclose').focus();
+  }
+  function closeLb() {
+    lb.hidden = true;
+    lbimg.removeAttribute('src');
+    if (lastFrame) lastFrame.focus();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.frame'), function (f) {
+    f.addEventListener('click', function () { openLb(f); });
+  });
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb || e.target.id === 'lbclose') closeLb();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lb.hidden) closeLb();
+  });
+})();
+</script>
+
+</body></html>
