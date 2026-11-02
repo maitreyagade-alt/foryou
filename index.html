@@ -302,11 +302,13 @@ h1 .hb { display: block; font-size: .46em; color: var(--ink-soft); margin-bottom
     </div>
     <div class="pair">
       <figure class="arch">
-        <img src="img/baby.jpg" width="661" height="1200" alt="An old photo of a baby in a pale pink party dress and a sparkly silver crown, looking over her shoulder next to a mirror">
+        <!-- FIXED: removed img/ -->
+        <img src="baby.jpg" width="661" height="1200" alt="An old photo of a baby in a pale pink party dress and a sparkly silver crown, looking over her shoulder next to a mirror">
         <figcaption>Once upon a time</figcaption>
       </figure>
       <figure class="arch late">
-        <img src="img/saree-blue.jpg" width="730" height="1200" alt="Smiling in a blue and red silk saree with gold jewellery and henna, on a terrace with green plants behind">
+        <!-- FIXED: removed img/ -->
+        <img src="saree-blue.jpg" width="730" height="1200" alt="Smiling in a blue and red silk saree with gold jewellery and henna, on a terrace with green plants behind">
         <figcaption>and here we are</figcaption>
       </figure>
     </div>
@@ -322,38 +324,39 @@ h1 .hb { display: block; font-size: .46em; color: var(--ink-soft); margin-bottom
     </div>
     <div class="gallery">
       <figure class="shot">
-        <button class="frame" type="button" data-src="img/kurta.jpg" data-cap="A phone case with a face of its own.">
-          <img src="img/kurta.jpg" width="677" height="1200" alt="Mirror selfie in a black kurta with white paisley print, holding a phone with a smiley case">
+        <!-- FIXED: removed img/ from data-src and src -->
+        <button class="frame" type="button" data-src="kurta.jpg" data-cap="A phone case with a face of its own.">
+          <img src="kurta.jpg" width="677" height="1200" alt="Mirror selfie in a black kurta with white paisley print, holding a phone with a smiley case">
         </button>
         <figcaption>A phone case with a face of its own.</figcaption>
       </figure>
       <figure class="shot">
-        <button class="frame" type="button" data-src="img/event.jpg" data-cap="Caught mid-smile, chairs and all.">
-          <img src="img/event.jpg" width="1200" height="676" alt="Close selfie in a green embroidered top, smiling, with rows of cream plastic chairs behind">
+        <button class="frame" type="button" data-src="event.jpg" data-cap="Caught mid-smile, chairs and all.">
+          <img src="event.jpg" width="1200" height="676" alt="Close selfie in a green embroidered top, smiling, with rows of cream plastic chairs behind">
         </button>
         <figcaption>Caught mid-smile, chairs and all.</figcaption>
       </figure>
       <figure class="shot">
-        <button class="frame" type="button" data-src="img/saree-maroon.jpg" data-cap="Pearls, a nath, and that smile.">
-          <img src="img/saree-maroon.jpg" width="675" height="1200" alt="Portrait in a maroon saree with a teal and gold border, pearl jewellery and a nath">
+        <button class="frame" type="button" data-src="saree-maroon.jpg" data-cap="Pearls, a nath, and that smile.">
+          <img src="saree-maroon.jpg" width="675" height="1200" alt="Portrait in a maroon saree with a teal and gold border, pearl jewellery and a nath">
         </button>
         <figcaption>Pearls, a nath, and that smile.</figcaption>
       </figure>
       <figure class="shot">
-        <button class="frame" type="button" data-src="img/ride.jpg" data-cap="Out for a ride, tongue out.">
-          <img src="img/ride.jpg" width="1200" height="675" alt="Selfie on a ride: a young man in a helmet in the front, and behind him someone sticking out their tongue">
+        <button class="frame" type="button" data-src="ride.jpg" data-cap="Out for a ride, tongue out.">
+          <img src="ride.jpg" width="1200" height="675" alt="Selfie on a ride: a young man in a helmet in the front, and behind him someone sticking out their tongue">
         </button>
         <figcaption>Out for a ride, tongue out.</figcaption>
       </figure>
       <figure class="shot">
-        <button class="frame" type="button" data-src="img/mirror-blue.jpg" data-cap="Gold mirror, blue dress, good light.">
-          <img src="img/mirror-blue.jpg" width="900" height="1200" alt="Mirror selfie in a navy dress, framed by a carved gold and red mirror, with a staircase and statues behind">
+        <button class="frame" type="button" data-src="mirror-blue.jpg" data-cap="Gold mirror, blue dress, good light.">
+          <img src="mirror-blue.jpg" width="900" height="1200" alt="Mirror selfie in a navy dress, framed by a carved gold and red mirror, with a staircase and statues behind">
         </button>
         <figcaption>Gold mirror, blue dress, good light.</figcaption>
       </figure>
       <figure class="shot">
-        <button class="frame" type="button" data-src="img/camera.jpg" data-cap="Camera up, mirror ready.">
-          <img src="img/camera.jpg" width="479" height="618" alt="Mirror photo in a yellow kurta, holding a silver film camera in front of the face, with green bangles">
+        <button class="frame" type="button" data-src="camera.jpg" data-cap="Camera up, mirror ready.">
+          <img src="camera.jpg" width="479" height="618" alt="Mirror photo in a yellow kurta, holding a silver film camera in front of the face, with green bangles">
         </button>
         <figcaption>Camera up, mirror ready.</figcaption>
       </figure>
@@ -470,50 +473,4 @@ h1 .hb { display: block; font-size: .46em; color: var(--ink-soft); margin-bottom
     wn.textContent = String(i + 1);
     wt.textContent = WISHES[i];
     wl.textContent = 'Wish ' + (i + 1) + ' of 20';
-    count.textContent = seenCount + ' of 20 opened';
-    card.classList.remove('swap');
-    void card.offsetWidth;
-    card.classList.add('swap');
-  }
-
-  document.getElementById('surprise').addEventListener('click', function () {
-    var pool = [], i;
-    for (i = 0; i < WISHES.length; i++) { if (!seen[i] && i !== current) pool.push(i); }
-    if (!pool.length) { for (i = 0; i < WISHES.length; i++) { if (i !== current) pool.push(i); } }
-    show(pool[Math.floor(Math.random() * pool.length)]);
-  });
-  show(0);
-
-  // Lightbox
-  var lb = document.getElementById('lb');
-  var lbimg = document.getElementById('lbimg');
-  var lbcap = document.getElementById('lbcap');
-  var lastFrame = null;
-
-  function openLb(frame) {
-    var img = frame.querySelector('img');
-    lastFrame = frame;
-    lbimg.src = frame.getAttribute('data-src');
-    lbimg.alt = img ? img.alt : '';
-    lbcap.textContent = frame.getAttribute('data-cap') || '';
-    lb.hidden = false;
-    document.getElementById('lbclose').focus();
-  }
-  function closeLb() {
-    lb.hidden = true;
-    lbimg.removeAttribute('src');
-    if (lastFrame) lastFrame.focus();
-  }
-  Array.prototype.forEach.call(document.querySelectorAll('.frame'), function (f) {
-    f.addEventListener('click', function () { openLb(f); });
-  });
-  lb.addEventListener('click', function (e) {
-    if (e.target === lb || e.target.id === 'lbclose') closeLb();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !lb.hidden) closeLb();
-  });
-})();
-</script>
-
-</body></html>
+    count.textContent = seenCount + ' of 
